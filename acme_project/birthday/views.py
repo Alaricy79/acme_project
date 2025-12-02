@@ -29,10 +29,10 @@ def birthday(request, pk=None):
     return render(request, 'birthday/birthday.html', context)
 
 
-# def birthday_list(request):
-#     birthdays = Birthday.objects.all()
-#     context = {'birthdays': birthdays}
-#     return render(request, 'birthday/birthday_list.html', context)
+def birthday_list(request):
+    birthdays = Birthday.objects.all()
+    context = {'birthdays': birthdays}
+    return render(request, 'birthday/birthday_list.html', context)
 
 
 def delete_birthday(request, pk):
