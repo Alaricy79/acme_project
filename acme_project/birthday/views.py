@@ -22,6 +22,7 @@ class BirthdayUpdateView(UpdateView):
 
 class BirthdayDeleteView(DeleteView):
     model = Birthday
+    success_url = reverse_lazy('birthday:list')
 
 
 class BirthdayListView(ListView):
