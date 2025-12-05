@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-from .models import Birthday
+from .models import Birthday, Congratulation
 
 BEATLES = {'Джон Леннон', 'Пол Маккартни', 'Джордж Харрисон', 'Ринго Старр'}
 
@@ -30,3 +30,10 @@ class BirthdayForm(forms.ModelForm):
         last_name = self.cleaned_data['last_name']
         if f'{first_name} {last_name}' in BEATLES:
             raise ValidationError('Мы тоже любим Битлз, но введите, пожалуйста, настоящее имя!')
+
+
+class CongratulationForm(forms.ModelForm):
+
+    class Meta:
+        model = Congratulation
+        fields = ('text',)
